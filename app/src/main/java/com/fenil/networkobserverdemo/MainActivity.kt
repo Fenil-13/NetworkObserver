@@ -12,7 +12,7 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-            NetworkObserver(applicationContext,object :NetworkListener{
+            NetworkObserver.getInstance(applicationContext,object :NetworkListener{
                 override fun onNetworkAvailable() {
                     Toast.makeText(this@MainActivity, "Network is Available", Toast.LENGTH_SHORT).show()
                 }

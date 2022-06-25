@@ -5,7 +5,7 @@ import android.os.Build
 import androidx.annotation.RequiresApi
 import androidx.lifecycle.LifecycleOwner
 
-class NetworkObserver(
+class NetworkObserver private constructor(
     context: Context,
     networkListener: NetworkListener,
     lifecycleOwner: LifecycleOwner
@@ -20,6 +20,13 @@ class NetworkObserver(
             } else {
                 networkListener.onNetworkLoss()
             }
+        }
+    }
+    companion object{
+        fun getInstance(context: Context,
+                        networkListener: NetworkListener,
+                        lifecycleOwner: LifecycleOwner):NetworkObserver{
+            return NetworkObserver(context, networkListener, lifecycleOwner)
         }
     }
 }
