@@ -48,7 +48,7 @@ afterEvaluate {
 
                 groupId='com.github.Fenil-13'
                 artifactId='NetworkObserver'
-                version='1.0'
+                version='1.0.2'
             }
         }
     }
